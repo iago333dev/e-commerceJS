@@ -62,7 +62,7 @@ class UI {
                     class="product-img"/>                
                     <button class="bag-btn" data-id="${product.id}">
                         <i class="fa fa-shopping-cart"></i>
-                        add to bag
+                        Comprar
                     </button>
                 </div>
                 <h3>${product.title}</h3>
@@ -86,14 +86,14 @@ class UI {
             let inCart = cart.find(item => item.id === id);
             
             if(inCart){
-                button.innerText = "In Cart";
+                button.innerText = "No Carrinho";
                 button.disabled = true;
             }
             button.addEventListener('click', (event)=>{
                 //console.log(event);
 
                 //Altera nome do Botão e Desativa
-                event.target.innerText = "In Cart";
+                event.target.innerText = "No Carrinho";
                 event.target.disable = true;
 
                 console.log(event.target);
@@ -150,7 +150,7 @@ class UI {
             <div>
                 <h4>${item.title}</h4>
                 <h5>$${item.price}</h5>
-                <span class="remove-item" data-id=${item.id}>Remove</span>
+                <span class="remove-item" data-id=${item.id}>Remover</span>
             </div>
             <div>
                 <i class="fa fa-chevron-up" data-id=${item.id}></i>
@@ -339,3 +339,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     });
 
 });
+
+function ScrollToBottom() {
+    window.scrollTo({ top: 800, behavior: 'smooth' })  
+}
+
